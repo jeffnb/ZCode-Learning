@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Accordion Example</title>
+    <style>
+      #accordion h3 {width:300px; height:30px; line-height:30px; background:#ccc; color:#333; margin:0; padding:0; text-indent:10px; cursor:pointer; border:1px solid #999; border-top:0;}
+      #accordion h3:first-child {border-top:1px solid #999;}
+      #accordion p {background:#eee; color:#333; width:280px; margin:0; padding:10px; border:1px solid #999; border-top:0; display:none;}
+    </style>
+  </head>
+  <body>
+    <div id="accordion">
+      <h3>Item 1</h3>
+      <p>Cras bibendum egestas lacus, at laoreet felis commodo a. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+      <h3>Item 2</h3>
+      <p>Phasellus accumsan diam tincidunt magna mattis sollicitudin. Vestibulum velit tortor, eleifend a volutpat in, lobortis at est. Vestibulum sodales adipiscing.</p>
+      <h3>Item 3</h3>
+      <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+      <h3>Item 4</h3>
+      <p>Nunc diam mi, gravida at tincidunt id, mollis vel lorem. Mauris vulputate eleifend nibh, non aliquet nibh pharetra ut. Nam.</p>
+      <h3>Item 5</h3>
+      <p>Phasellus magna ante, commodo sit amet pulvinar id, tristique nec dolor. Sed ultricies pretium quam, vitae porta lectus euismod nec.</p>
+      <h3>Item 6</h3>
+      <p>Nunc molestie elementum quam eu posuere. Vivamus consectetur porta malesuada. Aliquam quis risus lacus, id ultrices eros. Fusce volutpat placerat.</p>
+      <h3>Item 7</h3>
+      <p>Curabitur laoreet nibh suscipit quam accumsan condimentum. Praesent pellentesque convallis euismod. Vivamus sit amet eros a dolor scelerisque consequat. Integer.</p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+
+$(document).ready(function(){
+  var accordion = $("#accordion"),
+      contentElements = accordion.find('p');
+  accordion.on('click', function(e){
+    var target = $(e.target),
+        nextP = target.next('p');
+    if (target.is('h3') && nextP.is(':hidden')) {
+      contentElements.slideUp(300);
+      nextP.slideDown(300);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

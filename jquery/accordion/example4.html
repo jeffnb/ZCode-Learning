@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Accordion Example</title>
+    <style>
+      #accordion h3 {width:300px; height:30px; line-height:30px; background:#ccc; color:#333; margin:0; padding:0; border:1px solid #999; border-top:0;}
+      #accordion h3:first-child {border-top:1px solid #999;}
+      #accordion h3 a {color:#333; text-decoration:none; display:block; width:300px; height:30px; text-indent:10px;}
+      #accordion h3 + p {background:#eee; color:#333; width:300px; margin:0; padding:0; border:1px solid #999; border-top:0; border-bottom:0; height:0; overflow:hidden; -webkit-transition:height 0.3s ease-in-out; -moz-transition:height 0.3s ease-in-out; transition:height 0.3s ease-in-out;}
+      #accordion p:target {height:100px; border:1px solid #999; border-top:0;}
+    </style>
+  </head>
+  <body>
+    <div id="accordion">
+      <h3><a href="#item1">Item 1</a></h3>
+      <p id="item1">Cras bibendum egestas lacus, at laoreet felis commodo a. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+      <h3><a href="#item2">Item 2</a></h3>
+      <p id="item2">Phasellus accumsan diam tincidunt magna mattis sollicitudin. Vestibulum velit tortor, eleifend a volutpat in, lobortis at est. Vestibulum sodales adipiscing.</p>
+      <h3><a href="#item3">Item 3</a></h3>
+      <p id="item3">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+      <h3><a href="#item4">Item 4</a></h3>
+      <p id="item4">Nunc diam mi, gravida at tincidunt id, mollis vel lorem. Mauris vulputate eleifend nibh, non aliquet nibh pharetra ut. Nam.</p>
+      <h3><a href="#item5">Item 5</a></h3>
+      <p id="item5">Phasellus magna ante, commodo sit amet pulvinar id, tristique nec dolor. Sed ultricies pretium quam, vitae porta lectus euismod nec.</p>
+      <h3><a href="#item6">Item 6</a></h3>
+      <p id="item6">Nunc molestie elementum quam eu posuere. Vivamus consectetur porta malesuada. Aliquam quis risus lacus, id ultrices eros. Fusce volutpat placerat.</p>
+      <h3><a href="#item7">Item 7</a></h3>
+      <p id="item7">Curabitur laoreet nibh suscipit quam accumsan condimentum. Praesent pellentesque convallis euismod. Vivamus sit amet eros a dolor scelerisque consequat. Integer.</p>
+    </div>
+  </body>
+</html>

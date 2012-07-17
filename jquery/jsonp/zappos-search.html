@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JSONP Example</title>
+  </head>
+  <body>
+    <form id="search-form">
+      <input type="text" id="search-term" placeholder="Enter Search Term..." />
+      <input type="submit" value="Go!" />
+    </form>
+    <div id="results"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#search-form").on("submit", function(e){
+          var term = $("#search-term").val();
+          e.preventDefault();
+
+          $.getJSON("http://api.zappos.com/Search?term=" + term + "&key=943c808213759e246978f96974bc2d401e13382e&callback=?", showResults);
+        });
+
+        function showResults (data) {
+          console.log(data);
+          var innerhtml = "";
+          
+          innerhtml += "<p>Search Term: <b>";
+          innerhtml += data.originalTerm;
+          innerhtm += "</b></p>";
+
+
+          $("#results").html(innerhtml);
+          document.getElementById("results").innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>
