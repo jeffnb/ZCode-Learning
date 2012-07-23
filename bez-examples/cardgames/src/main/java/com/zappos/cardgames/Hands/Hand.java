@@ -30,6 +30,7 @@ public abstract class Hand {
     public void addCard(Card card){
         if(cardsInHand.size() <= maxCards){
             cardsInHand.add(card);
+            maxCards += 1;
         }
         else{
             throw new ArrayIndexOutOfBoundsException("Too many Cards");
@@ -39,6 +40,7 @@ public abstract class Hand {
     public void addCards(List<Card> cards){
         if(cardsInHand.size() + cards.size() <= maxCards){
             cardsInHand.addAll(cards);
+            maxCards += cards.size();
         }
         else{
             throw new ArrayIndexOutOfBoundsException("Too many Cards");
