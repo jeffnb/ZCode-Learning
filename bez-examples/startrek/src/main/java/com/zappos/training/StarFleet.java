@@ -10,16 +10,16 @@ import java.util.List;
  * Time: 11:27 AM
  * To change this template use File | Settings | File Templates.
  */
-public class StartFleet {
-    private static StartFleet ourInstance = new StartFleet();
+public class StarFleet {
+    private static StarFleet ourInstance = new StarFleet();
 
     private List<Interstellar> fleet = new ArrayList<Interstellar>();
 
-    public static StartFleet getInstance() {
+    public static StarFleet getInstance() {
         return ourInstance;
     }
 
-    private StartFleet() {
+    private StarFleet() {
     }
 
     public List<Interstellar> getFleet() {
@@ -36,5 +36,19 @@ public class StartFleet {
 
     public void removeShipFromFleet(Interstellar ship){
         fleet.remove(ship);
+    }
+
+    //Warp all the ships
+    public void warp(){
+
+        //Wait a moment for them to get ready
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        for(Interstellar ship : fleet){
+            ship.warp(9);
+        }
     }
 }

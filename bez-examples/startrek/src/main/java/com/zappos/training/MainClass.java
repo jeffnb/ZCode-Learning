@@ -18,11 +18,12 @@ public class MainClass {
         WarShip defiant = new WarShip("Defiant", 2, 15000, 50, 100);
         WarShip hathaway = new WarShip("Hathaway", 2, 60000, 500, 100);
 
-        //Now lets add them to a collection
-        List<WarShip> theFleet = new ArrayList<WarShip>();
-        theFleet.add(prometheus);
-        theFleet.add(defiant);
-        theFleet.add(hathaway);
+        //Add them lets add them to the starfleet
+        StarFleet theFleet = StarFleet.getInstance();
+
+        theFleet.addShipToFleet(prometheus);
+        theFleet.addShipToFleet(defiant);
+        theFleet.addShipToFleet(hathaway);
 
 
 
